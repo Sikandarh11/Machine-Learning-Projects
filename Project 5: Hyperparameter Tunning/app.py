@@ -53,7 +53,9 @@ def register():
     except Exception as e:
         return {"error": "SignUp Unsuccessful", "details": str(e)}, 500
 
-
+@app.route("/main")
+def main():
+    return render_template("index.html")
 
 @app.route("/predict", methods=['POST'])
 def predict():
@@ -110,4 +112,3 @@ def predict():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
